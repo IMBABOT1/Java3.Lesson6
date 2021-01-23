@@ -1,6 +1,6 @@
 public class OneOrFour {
 
-    public static boolean oneOrFour(int[]arr){
+    public boolean oneOreFour(int[]arr){
         boolean isContain = false;
         int index = 0;
         while (index < arr.length){
