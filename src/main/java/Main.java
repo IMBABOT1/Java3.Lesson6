@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
 
 
-    private static void afterLastFour(int[]arr){
+    private static int[] afterLastFour(int[]arr){
         int count = 0;
         int value = 4;
         for (int i = 0; i < arr.length ; i++) {
@@ -34,12 +34,31 @@ public class Main {
             }
             System.arraycopy(arr, (result+1), resArr, 0, resArr.length);
 
-        System.out.println(Arrays.toString(resArr));
+        return resArr;
+    }
+
+
+
+    public static boolean oneOrFour(int[]arr){
+        boolean isContain = false;
+        int index = 0;
+        while (index < arr.length){
+            if (arr[index] != 4 && arr[index] != 1){
+                isContain = false;
+                break;
+            }
+            index++;
+            isContain = true;
+        }
+
+
+        return isContain;
     }
 
 
     public static void main(String[] args) {
-        int[] ints = new int[]{1,2,4,4,2,3,4,1,7,1,6,8,32,4,2};
-        afterLastFour(ints);
+        int[] ints = new int[]{1,1,1,1,1,1,4,1};
+       // System.out.println(Arrays.toString(afterLastFour(ints)));
+        System.out.println(oneOrFour(ints));
     }
 }
