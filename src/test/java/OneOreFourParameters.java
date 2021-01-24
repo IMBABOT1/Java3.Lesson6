@@ -11,12 +11,12 @@ public class OneOreFourParameters {
         @Parameterized.Parameters
         public static Collection<Object> params(){
             return Arrays.asList(new Object[][]{
-                    {new int[]{1,4,1,4,1,1,1,4,1}, true},
+                    {new int[]{1,2,3,4,3,2,4,1,1}, false},
                     {new int[]{8,7,5,12,43,35,1,11,12,3}, false},
                     {new int[]{16,2,4,7,4,3,42,11,14,3}, false},
                     {new int[]{1,2,4,7,2,12,42,11,6,3}, false},
-                    {new int[]{1,1,1,1,1,1,1,1,1,1}, false},
-                    {new int[]{4,4,4,4,4,4,4,4,4,4}, false},
+                    {new int[]{1,1,1,1,1,1,1,1,1,4}, true},
+                    {new int[]{4}, false},
 
             });
         }
