@@ -1,18 +1,23 @@
 public class OneOrFour {
 
-    public boolean oneOreFour(int[]arr){
-        boolean isContain = false;
+    public boolean oneOreFour(int[] arr) {
+        boolean four = false;
+        boolean one = false;
         int index = 0;
-        while (index < arr.length){
-            if (arr[index] != 4 && arr[index] != 1){
-                isContain = false;
-                break;
+        while (index < (arr.length -1) && (arr[index] == 4 || arr[index] == 1)){
+            if (arr[index] == 4) {
+                four = true;
             }
+            if (arr[index] == 1){
+                one = true;
+            }
+
             index++;
-            isContain = true;
         }
 
-
-        return isContain;
+        return four & one;
     }
 }
+
+
+
