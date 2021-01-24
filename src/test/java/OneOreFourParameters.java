@@ -11,22 +11,24 @@ public class OneOreFourParameters {
         @Parameterized.Parameters
         public static Collection<Object> params(){
             return Arrays.asList(new Object[][]{
-                    {new int[]{1,4,1,4,1,1,1,4,1}},
-                    {new int[]{8,7,5,12,43,35,1,11,12,3}},
-                    {new int[]{16,2,4,7,4,3,42,11,14,3}},
-                    {new int[]{1,2,4,7,2,12,42,11,6,3}},
-                    {new int[]{1,1,1,1,1,1,1,1,1,1}},
-                    {new int[]{4,4,4,4,4,4,4,4,4,4}},
+                    {new int[]{1,4,1,4,1,1,1,4,1}, true},
+                    {new int[]{8,7,5,12,43,35,1,11,12,3}, false},
+                    {new int[]{16,2,4,7,4,3,42,11,14,3}, false},
+                    {new int[]{1,2,4,7,2,12,42,11,6,3}, false},
+                    {new int[]{1,1,1,1,1,1,1,1,1,1}, false},
+                    {new int[]{4,4,4,4,4,4,4,4,4,4}, false},
 
             });
         }
 
-    public OneOreFourParameters(int[] in) {
+
+    public OneOreFourParameters(int[] in, boolean oneOrFour1) {
         this.in = in;
+        this.oneOrFour1 = oneOrFour1;
     }
 
     private int[]in;
-    private boolean[]result;
+    private boolean oneOrFour1;
     private OneOrFour oneOrFour;
 
     @Before
@@ -36,7 +38,7 @@ public class OneOreFourParameters {
 
     @Test
     public void test(){
-        Assert.assertTrue(oneOrFour.oneOreFour(in));
+        Assert.assertEquals(oneOrFour1, oneOrFour.oneOreFour(in));
     }
 
 }
